@@ -5,20 +5,26 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 5.0f;
+    private float _speed = 0.1f;
 
-    private float _currentDashTime;
+    [SerializeField]
+    private float _dashSpeed = 10f;
+    private float _currentDashTime = 0.0f;
+    [SerializeField]
     private float _maxDashTime = 2f;
+    [SerializeField]
+    private float _dashStoppingSpeed = 0.5f;
 
     [SerializeField]
     private bool _isDead = false;
 
-    private CharacterController _controller;
+    [SerializeField]
+    private bool _isDashing = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        _controller = GetComponent<CharacterController>();
+       
     }
 
     // Update is called once per frame
@@ -28,8 +34,13 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        Move();
+        if(_isDashing == false)
+        {
+            Move();
+        }
+        
         DoAction();
+        Dash();
        
     }
 
@@ -38,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
         Quaternion rotationVector = new Quaternion(0, Input.GetAxis("RotationHorizontal"), 0, 0);
 
-        _controller.Move(moveVector * _speed * Time.deltaTime);
+        transform.position = transform.position + (moveVector * _speed * Time.deltaTime);
 
         Vector3 direction = Vector3.right * Input.GetAxisRaw("RotationHorizontal") + Vector3.forward * Input.GetAxisRaw("RotationVertical");
 
@@ -55,27 +66,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //protected void Dash() {
-    //    if(Input.GetButtonDown("Fire2"))
-    //    {
-    //        _currentDashTime = 0.0f;
-    //    }
-    //    if(_currentDashTime < _maxDashTime)
-    //    {
-    //        // replace me with the direction you want to dash in
-    //        // to dash forward, this should be a vector in the direction the player is looking
-    //        // if you have access to your player in a variable, this would be something like:
-    //        // var directionYouWantToDash = player.transform.forward;
-    //        var directionYouWantToDash = new Vector3(0, 0, 0);
-    //        // this will make your velocity exactly equal to dash speed, regardless of direction
-    //        moveDir = directionYouWantToDash.normalized * dashSpeed;
-    //        _currentDashTime += dashStoppingSpeed;
-    //    } else
-    //    {
-    //        Debug.Log("Nope");
-    //    }
-    //    controller.Move(moveDir * Time.deltaTime);
-    //}
+    protected void Dash() {
+        if(Input.GetButtonDown("Fire2") && _isDashing == false)
+        {
+            _currentDashTime = 0.0f;
+            _isDashing = true;
+        }
+        if(_isDashing == true && _currentDashTime < _maxDashTime)
+        {
+            Vector3 directionYouWantToDash = transform.forward;
+
+            Vector3 moveDir = directionYouWantToDash.normalized * _dashSpeed * _speed;
+            _currentDashTime += _dashStoppingSpeed;
+
+            transform.position = transform.position + (moveDir * Time.deltaTime);
+        } else
+        {
+            _isDashing = false;
+        }
+        
+    }
 
     protected void Kill() {
         _isDead = true;
@@ -98,7 +108,7 @@ public class PlayerController : MonoBehaviour
 
         moveVector = new Vector3(inputX, 0, inputY);
 
-        _controller.Move(moveVector * _speed * Time.deltaTime);
+        transform.position = transform.position + (moveVector * _speed * Time.deltaTime);
 
         float directionX = Input.GetAxisRaw("RotationHorizontal");
         float directionY = Input.GetAxisRaw("RotationVertical");

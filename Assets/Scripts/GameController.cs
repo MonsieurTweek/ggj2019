@@ -46,4 +46,9 @@ public class GameController : MonoBehaviour
     {
         return _deathCounter;
     }
+
+    public void RestartGame()
+    {
+        _deathCounter = 0;
+    }
 }

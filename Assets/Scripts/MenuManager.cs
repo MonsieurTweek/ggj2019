@@ -64,10 +64,20 @@ public class MenuManager : MonoBehaviour
         if(deathCounterTextArea != null)
         {
             int deathCounter = gameController.GetDeathCounter();
-            if (deathCounter > 0)
+            if (deathCounter > 1)
             {
                 deathCounterTextArea.text = "By dying only " + deathCounter + " times ...";
             }
+            else if (deathCounter == 1)
+            {
+                deathCounterTextArea.text = "By dying only " + deathCounter + " time ...";
+            }
+            else
+            {
+                deathCounterTextArea.text = "Without any death ?!";
+            }
+
+            gameController.RestartGame();
         }
     }
 

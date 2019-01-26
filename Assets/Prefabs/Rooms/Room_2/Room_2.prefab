@@ -1,22 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &377785882146125047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533218508769957651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6632f9ac9d0a694ca2c3c463d5c66c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isActive: 1
-  _laserCooldown: 2
-  _laserCurrentCooldown: 0
-  _blinkState: 1
-  _canBlink: 1
 --- !u!1 &947992514185238987
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,23 +108,6 @@ Transform:
   m_Father: {fileID: 5792748083542410530}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4619399555287995804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2746607202480568185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6632f9ac9d0a694ca2c3c463d5c66c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isActive: 1
-  _laserCooldown: 1
-  _laserCurrentCooldown: 0
-  _blinkState: 1
-  _canBlink: 1
 --- !u!1 &8271977475289065638
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,23 +145,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3751951445424327692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8982729511318033122}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6632f9ac9d0a694ca2c3c463d5c66c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _isActive: 1
-  _laserCooldown: 1
-  _laserCurrentCooldown: 0
-  _blinkState: 1
-  _canBlink: 1
 --- !u!1001 &65496594498435994
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1215,12 +1164,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 540b278e62babab4599b26c7158d3b4b, type: 3}
---- !u!1 &2746607202480568185 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3984344116817545774, guid: 540b278e62babab4599b26c7158d3b4b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1249418422764305751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2746607202480568184 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3984344116817545775, guid: 540b278e62babab4599b26c7158d3b4b,
@@ -2699,17 +2642,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4528363074427625674, guid: 540b278e62babab4599b26c7158d3b4b,
+        type: 3}
+      propertyPath: _laserCooldown
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 540b278e62babab4599b26c7158d3b4b, type: 3}
 --- !u!4 &533218508769957650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3984344116817545775, guid: 540b278e62babab4599b26c7158d3b4b,
-    type: 3}
-  m_PrefabInstance: {fileID: 3471541620002151741}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &533218508769957651 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3984344116817545774, guid: 540b278e62babab4599b26c7158d3b4b,
     type: 3}
   m_PrefabInstance: {fileID: 3471541620002151741}
   m_PrefabAsset: {fileID: 0}
@@ -4112,12 +4054,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 540b278e62babab4599b26c7158d3b4b, type: 3}
---- !u!1 &8982729511318033122 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3984344116817545774, guid: 540b278e62babab4599b26c7158d3b4b,
-    type: 3}
-  m_PrefabInstance: {fileID: 5467980419822803148}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8982729511318033123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3984344116817545775, guid: 540b278e62babab4599b26c7158d3b4b,

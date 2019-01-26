@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2475188863294111082}
   - component: {fileID: 2160131285196005506}
+  - component: {fileID: 1228985781}
   m_Layer: 0
   m_Name: Doors
   m_TagString: Untagged
@@ -24,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1028217463107223005}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.3, y: 0, z: -2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -46,12 +47,25 @@ Animator:
   m_Controller: {fileID: 9100000, guid: a07bdaceea802a64a8482c814e3ba534, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1228985781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028217463107223005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243ce900bcf030c43b94a72232394e5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isOpen: 1
 --- !u!1 &2751214093403387887
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,9 +77,10 @@ GameObject:
   - component: {fileID: 3522365034644589704}
   - component: {fileID: 7489546846981701683}
   - component: {fileID: 3567351178240169802}
+  - component: {fileID: 1816566085}
   m_Layer: 0
   m_Name: polySurface5
-  m_TagString: Untagged
+  m_TagString: Threat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,8 +93,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2751214093403387887}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: -200, y: 245, z: 22.518478}
+  m_LocalPosition: {x: 0, y: 0, z: 0.06258638}
+  m_LocalScale: {x: -200, y: 250, z: 22.518478}
   m_Children: []
   m_Father: {fileID: 2475188863294111082}
   m_RootOrder: 1
@@ -129,6 +144,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1816566085
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2751214093403387887}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300002, guid: 335969cff954d6347b707dec770fe843, type: 3}
 --- !u!1 &7926145143536270715
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,9 +169,10 @@ GameObject:
   - component: {fileID: 4143361823419240162}
   - component: {fileID: 3107946845725496394}
   - component: {fileID: 3501062515696102305}
+  - component: {fileID: 983450912}
   m_Layer: 0
   m_Name: polySurface4
-  m_TagString: Untagged
+  m_TagString: Threat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,8 +185,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7926145143536270715}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 200, y: 245, z: 22.518478}
+  m_LocalPosition: {x: 0, y: 0, z: 0.06258638}
+  m_LocalScale: {x: 200, y: 250, z: 22.518478}
   m_Children: []
   m_Father: {fileID: 2475188863294111082}
   m_RootOrder: 0
@@ -206,3 +236,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &983450912
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7926145143536270715}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 335969cff954d6347b707dec770fe843, type: 3}

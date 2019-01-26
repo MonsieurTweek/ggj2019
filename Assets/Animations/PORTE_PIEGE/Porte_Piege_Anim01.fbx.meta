@@ -69,7 +69,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.08011869
+        functionName: SwitchDoorState
+        data: 
+        objectReferenceParameter: {fileID: 1028217463107223005, guid: 00ab4ec5b82463a47b1530d7ac8c00ef,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7270029
+        functionName: SwitchDoorState
+        data: 
+        objectReferenceParameter: {fileID: 1028217463107223005, guid: 00ab4ec5b82463a47b1530d7ac8c00ef,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

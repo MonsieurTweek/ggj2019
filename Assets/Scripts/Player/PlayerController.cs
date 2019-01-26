@@ -165,6 +165,22 @@ public class PlayerController : MonoBehaviour
             {
                 trigger.DoActiveTriggerFromPlayer();
             }
+        } else if(other.tag == "Room")
+        {
+
+            Debug.Log("Enter room");
+
+            RoomController roomController;
+
+            GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
+            foreach(GameObject room in rooms)
+            {
+                roomController = room.GetComponent<RoomController>();
+                roomController.DisableLocalAudioSource();
+            }
+
+            roomController = other.GetComponent<RoomController>();
+            roomController.EnableLocalAudioSource();    
         }
     }
 

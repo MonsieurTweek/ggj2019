@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
     [SerializeField]
     private float _speed = 2.8f;
 
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private bool _isDashing = false;
 
     private Animator _animator;
+
+    public GameController gameController;
 
     // Start is called before the first frame update
     void Start()
@@ -79,6 +82,7 @@ public class PlayerController : MonoBehaviour
     protected void DoAction() {
         if(Input.GetButtonDown("Fire1"))
         {
+            Kill();
             Debug.Log("DO ACTION !");
         }
     }
@@ -89,7 +93,7 @@ public class PlayerController : MonoBehaviour
         {
             _currentDashTime = 0.0f;
             _isDashing = true;
-
+            this.GetComponent<Collider>().enabled = false;
             _dashCurrentCooldown = Time.time + _dashCooldown;
         }
         if(_isDashing == true && _currentDashTime < _maxDashTime)
@@ -103,6 +107,7 @@ public class PlayerController : MonoBehaviour
         } else
         {
             _isDashing = false;
+            this.GetComponent<Collider>().enabled = true;
         }
 
         _animator.SetBool("IsDashing", _isDashing);
@@ -111,14 +116,23 @@ public class PlayerController : MonoBehaviour
 
     protected void Kill() {
         _isDead = true;
+        _animator.SetBool("IsDead", true);
         Debug.Log("YOU DIE !");
     }
 
     public void OnTriggerEnter(Collider other) {
         if(other.tag == "Threat")
         {
-           // other.GetComponent<Trap>().DoActiveTrap();
+            Trap trap = other.GetComponent<Trap>();
+            if(trap != null)
+            {
+                trap.ActiveTrap();
+            }
+            
             Kill();
+        } else if(other.tag == "Trigger")
+        {
+            other.GetComponent<Trigger>().DoActiveTrigger();
         }
     }
 
@@ -172,6 +186,22 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }
+    }
+
+    public void IsDead()
+    {
+        Debug.Log("Game Over (from player)");
+        gameController.GameOver();
+    }
+
+    public void Reset()
+    {
+        _isDead = false;
+        _isDashing = false;
+        _animator.SetBool("IsMoving", false);
+        _animator.SetBool("IsDead", false);
+        _animator.SetBool("IsDashing", false);
+        _animator.Play("Idle");
     }
 
 }

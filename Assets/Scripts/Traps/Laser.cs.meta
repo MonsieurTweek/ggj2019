@@ -3,7 +3,12 @@ guid: a6632f9ac9d0a694ca2c3c463d5c66c3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - enableSFX: {fileID: 8300000, guid: 93dc4fa8890b4794097e7257dad9a147, type: 3}
+  - ambianceSFX: {instanceID: 0}
+  - disableSFX: {instanceID: 0}
+  - deathSFX: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

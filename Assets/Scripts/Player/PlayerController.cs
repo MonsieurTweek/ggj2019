@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _canMove = true;
+        gameObject.transform.position = gameController.spawner.transform.position;
     }
 
     // Update is called once per frame

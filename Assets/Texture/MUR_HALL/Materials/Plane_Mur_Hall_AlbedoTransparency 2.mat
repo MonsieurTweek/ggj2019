@@ -7,13 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Plane_Mur_carrelage_AlbedoTransparency
+  m_Name: Plane_Mur_Hall_AlbedoTransparency 2
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-<<<<<<< HEAD
-  m_ShaderKeywords: 
-=======
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
->>>>>>> 2f5b8f30e0e691ece77935911bd1022fef79d3df
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -24,11 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-<<<<<<< HEAD
-        m_Texture: {fileID: 0}
-=======
-        m_Texture: {fileID: 2800000, guid: 47ff91316312d2c4e94efe50dca5891e, type: 3}
->>>>>>> 2f5b8f30e0e691ece77935911bd1022fef79d3df
+        m_Texture: {fileID: 2800000, guid: af349503218a6154e993ba35027e0ce6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -45,25 +37,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-<<<<<<< HEAD
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 45d4c18e37e7e9c4e9af477376bc08df, type: 3}
+        m_Texture: {fileID: 2800000, guid: 604a609f9068de44d87137d395654bae, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 0}
-=======
-        m_Scale: {x: 0.5, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 45d4c18e37e7e9c4e9af477376bc08df, type: 3}
-        m_Scale: {x: 0.5, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: c2e26fc1ff03c28458163b4d4047c80d, type: 3}
->>>>>>> 2f5b8f30e0e691ece77935911bd1022fef79d3df
+        m_Texture: {fileID: 2800000, guid: 02d94fb52bb71ed42a7a04703c4bc243, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:

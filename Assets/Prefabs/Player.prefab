@@ -1825,6 +1825,7 @@ MonoBehaviour:
   _isDashing: 0
   _canMove: 0
   gameController: {fileID: 0}
+  playerAudioController: {fileID: 2500491226976705800}
 --- !u!114 &2500491226976705800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1837,6 +1838,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e99de8f469051084b830ea1c96f91b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkSFX: {fileID: 8300000, guid: 440c8bcb7dc80324683fc21f558f66a0, type: 3}
+  dashSFX: {fileID: 8300000, guid: a44fa34d91c88c44aa2cb0375a35fcaa, type: 3}
+  deathSFX: {fileID: 8300000, guid: d87bef6c39169c64697191a6c768113b, type: 3}
+  audioSource: {fileID: 5987022845169802115}
 --- !u!1 &7840900958947576848
 GameObject:
   m_ObjectHideFlags: 0

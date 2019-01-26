@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e7a609512b87426458ec5d2ed4c587a6
+=======
+guid: 0eadd47069c82ea4ea1e021694a2aead
+>>>>>>> 2f5b8f30e0e691ece77935911bd1022fef79d3df
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -9,6 +13,10 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCylinder5
+<<<<<<< HEAD
+=======
+    9500000: //RootNode
+>>>>>>> 2f5b8f30e0e691ece77935911bd1022fef79d3df
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -61,8 +69,13 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+<<<<<<< HEAD
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
+=======
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+>>>>>>> 2f5b8f30e0e691ece77935911bd1022fef79d3df
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -89,7 +102,11 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+<<<<<<< HEAD
   animationType: 0
+=======
+  animationType: 2
+>>>>>>> 2f5b8f30e0e691ece77935911bd1022fef79d3df
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

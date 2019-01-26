@@ -1,14 +1,79 @@
 fileFormatVersion: 2
-guid: e2a126f103890dc4c890e4a3af2f731a
+guid: ce71cb70715e52945bc80fa947caf0f8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: CouchCushion4
+    100004: CouchCushion5
+    100006: LuxuryLivingRoomSofa1:CouchCushion4
+    100008: LuxuryLivingRoomSofa1:SofaBackCushion1
+    100010: LuxuryLivingRoomSofa1:SofaBackCushion2
+    100012: LuxuryLivingRoomSofa1:SofaBottomCushion
+    100014: LuxuryLivingRoomSofa1:SofaSideCushion1
+    100016: LuxuryLivingRoomSofa1:transform1
+    100018: LuxuryLivingRoomSofa1:transform2
+    100020: LuxuryLivingRoomSofa1:transform3
+    100022: LuxuryLivingRoomSofa1:transform4
+    100024: LuxuryLivingRoomSofa1:transform5
+    100026: LuxuryLivingRoomSofa1:transform6
+    100028: pCube1
+    100030: pCube2
+    100032: pCube3
+    100034: pCube4
+    100036: pCube5
+    100038: pCylinder1
+    100040: pCylinder2
+    100042: pSphere1
+    100044: pSphere2
+    100046: transform1
+    100048: transform2
+    100050: transform3
+    100052: transform4
+    100054: transform5
+    100056: transform6
+    100058: transform7
+    100060: transform8
+    100062: transform9
     400000: //RootNode
+    400002: CouchCushion4
+    400004: CouchCushion5
+    400006: LuxuryLivingRoomSofa1:CouchCushion4
+    400008: LuxuryLivingRoomSofa1:SofaBackCushion1
+    400010: LuxuryLivingRoomSofa1:SofaBackCushion2
+    400012: LuxuryLivingRoomSofa1:SofaBottomCushion
+    400014: LuxuryLivingRoomSofa1:SofaSideCushion1
+    400016: LuxuryLivingRoomSofa1:transform1
+    400018: LuxuryLivingRoomSofa1:transform2
+    400020: LuxuryLivingRoomSofa1:transform3
+    400022: LuxuryLivingRoomSofa1:transform4
+    400024: LuxuryLivingRoomSofa1:transform5
+    400026: LuxuryLivingRoomSofa1:transform6
+    400028: pCube1
+    400030: pCube2
+    400032: pCube3
+    400034: pCube4
+    400036: pCube5
+    400038: pCylinder1
+    400040: pCylinder2
+    400042: pSphere1
+    400044: pSphere2
+    400046: transform1
+    400048: transform2
+    400050: transform3
+    400052: transform4
+    400054: transform5
+    400056: transform6
+    400058: transform7
+    400060: transform8
+    400062: transform9
     2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: simple_sink
+    2100002: LuxuryLivingRoomSofa1_SofaSideCushionSG1
+    2100004: LuxuryLivingRoomSofa1_CouchCushion3SG1
+    2100006: LuxuryLivingRoomSofa1_CouchCushion3SG3
+    2300000: pCube5
+    3300000: pCube5
+    4300000: pCube5
   externalObjects: {}
   materials:
     importMaterials: 1

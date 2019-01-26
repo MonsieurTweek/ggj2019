@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private bool _isDashing = false;
+    [SerializeField]
+    private bool _canMove = false;
 
     private Animator _animator;
 
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
+        _canMove = true;
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        if(_isDashing == false)
+        if(_canMove == true)
         {
             Move();
         }
@@ -73,18 +76,26 @@ public class PlayerController : MonoBehaviour
     }
 
     protected void DoAction() {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && _isDashing == false)
         {
+            _canMove = false;
             _animator.SetBool("IsDoingAction", true);
             Debug.Log("DO ACTION !");
         }
     }
 
+    public void ActionDone()
+    {
+        _canMove = true;
+        _animator.SetBool("IsDoingAction", false);
+    }
+
     protected void Dash() {
 
-        if(_dashCurrentCooldown <= Time.time && Input.GetButtonDown("Fire2") && _isDashing == false)
+        if(_dashCurrentCooldown <= Time.time && Input.GetButtonDown("Fire2") && _isDashing == false && _canMove == true)
         {
             _isDashing = true;
+            _canMove = false;
             this.GetComponent<Collider>().enabled = false;
             _dashCurrentCooldown = Time.time + _dashCooldown;
             _animator.SetBool("IsDashing", _isDashing);
@@ -101,6 +112,7 @@ public class PlayerController : MonoBehaviour
 
     public void StopDash() {
         _isDashing = false;
+        _canMove = true;
         _animator.SetBool("IsDashing", _isDashing);
         this.GetComponent<Collider>().enabled = true;
     }
@@ -185,15 +197,11 @@ public class PlayerController : MonoBehaviour
         gameController.GameOver();
     }
 
-    public void ActionDone()
-    {
-        _animator.SetBool("IsDoingAction", false);
-    }
-
     public void Reset()
     {
         _isDead = false;
         _isDashing = false;
+        _canMove = true;
         _animator.SetBool("IsMoving", false);
         _animator.SetBool("IsDead", false);
         _animator.SetBool("IsDashing", false);

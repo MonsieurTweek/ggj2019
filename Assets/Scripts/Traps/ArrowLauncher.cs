@@ -6,7 +6,7 @@ public class ArrowLauncher : Trap
 {
     public bool isFiring = false;
 
-    public bool canFire = true;
+   // public bool canFire = true;
 
     public ArrowController arrow;
     public float timeBetweenShot;
@@ -23,7 +23,7 @@ public class ArrowLauncher : Trap
         for(int i = 0; i < startingArrows; i++)
         {
             ArrowController newArrow = Instantiate(arrow, firePoint.position, firePoint.rotation);
-            
+            newArrow.transform.SetParent(transform);
             newArrow.gameObject.SetActive(false);
             newArrow.name = this.name+"_Arrow_" + i;
             inactiveArrows.Push(newArrow);
@@ -33,7 +33,7 @@ public class ArrowLauncher : Trap
     // Update is called once per frame
     void Update()
     {
-        if(canFire == false)
+        if(_isActive == false)
         {
             return;
         }
@@ -72,7 +72,7 @@ public class ArrowLauncher : Trap
         } else
         {
             newArrow = Instantiate(arrow, firePoint.position, firePoint.rotation);
-
+            newArrow.transform.SetParent(transform);
             newArrow.name = this.name + "_Arrow_" + activeArrows.Count;
             activeArrows.Add(newArrow);
         }
@@ -88,11 +88,12 @@ public class ArrowLauncher : Trap
 
     public override void ActiveTrapFromTrigger() {
         isFiring = false;
-        canFire = false;
+        _isActive = false;
     }
 
     public override void ActiveTrapFromPlayer() {
-        if(canFire == true)
+
+        if(_isActive == true)
         {
             isFiring = true;
         }

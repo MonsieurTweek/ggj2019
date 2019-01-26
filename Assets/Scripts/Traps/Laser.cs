@@ -12,7 +12,7 @@ public class Laser : Trap
     private float _laserCurrentCooldown = 0.0f;
 
     [SerializeField]
-    private bool _isActive = true;
+    private bool _blinkState = true;
 
     [SerializeField]
     private bool _canBlink = true;
@@ -22,18 +22,22 @@ public class Laser : Trap
 
     public override void ActiveTrapFromPlayer() {
         _canBlink = false;
-        _selfCollider.enabled = false;
     }
 
     public override void ActiveTrapFromTrigger() {
-        _canBlink = false;
-        _isActive = false;
+        if(_isActive == false)
+        {
+            return;
+        }
 
-        _selfCollider.enabled = _isActive;
+        _canBlink = false;
+        _blinkState = false;
+
+        _selfCollider.enabled = _blinkState;
 
         foreach(Renderer laserRenderer in _laserRenderers)
         {
-            laserRenderer.enabled = _isActive;
+            laserRenderer.enabled = _blinkState;
         }
     }
 
@@ -45,14 +49,14 @@ public class Laser : Trap
         if(_laserCurrentCooldown <= Time.time)
         {
             _laserCurrentCooldown = Time.time + _laserCooldown;
-            _selfCollider.enabled = !_isActive;
+            _selfCollider.enabled = !_blinkState;
            
             foreach(Renderer laserRenderer in _laserRenderers)
             {
-                laserRenderer.enabled = !_isActive;
+                laserRenderer.enabled = !_blinkState;
             }
 
-            _isActive = !_isActive;
+            _blinkState = !_blinkState;
         }
     }
 
@@ -66,6 +70,10 @@ public class Laser : Trap
     // Update is called once per frame
     void Update()
     {
+        if(_isActive == false)
+        {
+            return;
+        }
         Blink();
         
     }

@@ -1,15 +1,14 @@
 fileFormatVersion: 2
-guid: a3e32e7b406f42c438c845da6335a07c
+guid: 6a1d13019e072cc40915c40825e74a34
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: wire_027177027
+    2100000: deskWorn_OBJ_Material__1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Interrupteur
-    9500000: //RootNode
+    4300000: deskWorn_OBJ:deskWorn
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -62,8 +61,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -90,7 +89,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

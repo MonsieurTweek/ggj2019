@@ -21,7 +21,7 @@ public class Laser : Trap
     private Collider _selfCollider;
 
     public override void ActiveTrapFromPlayer() {
-        _canBlink = false;
+        //_canBlink = false;
     }
 
     public override void ActiveTrapFromTrigger() {

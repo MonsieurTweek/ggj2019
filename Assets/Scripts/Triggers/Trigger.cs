@@ -6,12 +6,17 @@ public class Trigger : MonoBehaviour
 {
 
     public Trap target;
+    public Light light;
     public bool needAction = true;
+    public bool hideOnTrigger = false;
+
+    [SerializeField]
+    private bool _isActive = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        EnableTrigger();
     }
 
     // Update is called once per frame
@@ -21,18 +26,50 @@ public class Trigger : MonoBehaviour
     }
 
     public void DoActiveTriggerFromPlayer() {
+        if(_isActive == false)
+        {
+            return;
+        }
         if(target != null)
         {
             target.ActiveTrapFromPlayer();
+            if(hideOnTrigger == true)
+            {
+                DisableTrigger();
+            }
+            Debug.Log("TRIGGER PLAYER ACTIVATED !");
         }
-        Debug.Log("TRIGGER PLAYER ACTIVATED !");
+        
     }
 
     public void DoActiveTriggerFromAction() {
+        if(_isActive == false)
+        {
+            return;
+        }
         if(target != null)
         {
             target.ActiveTrapFromTrigger();
+            if(hideOnTrigger == true)
+            {
+                DisableTrigger();
+            }
             Debug.Log("TRIGGER ACTION ACTIVATED !");
+        } else if(light != null)
+        {
+            light.enabled = true;
         }
+    }
+
+    public void EnableTrigger() { 
+        _isActive = true;
+        transform.root.gameObject.SetActive(true);
+
+    }
+
+    public void DisableTrigger() {
+        _isActive = false;
+        transform.root.gameObject.SetActive(false);
+
     }
 }

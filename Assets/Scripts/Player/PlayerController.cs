@@ -168,8 +168,6 @@ public class PlayerController : MonoBehaviour
         } else if(other.tag == "Room")
         {
 
-            Debug.Log("Enter room");
-
             RoomController roomController;
 
             GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
@@ -264,6 +262,16 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("IsFalling", false);
         _animator.SetBool("IsDoingAction", false);
         _animator.Play("Idle");
+
+        // Disable sounds
+        RoomController roomController;
+
+        GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
+        foreach (GameObject room in rooms)
+        {
+            roomController = room.GetComponent<RoomController>();
+            roomController.DisableLocalAudioSource();
+        }
     }
 
     public void EndGame()

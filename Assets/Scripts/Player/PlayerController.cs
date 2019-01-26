@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -47,6 +48,16 @@ public class PlayerController : MonoBehaviour
         }
         
         Dash();
+
+        // Debug
+        if(Input.GetButtonDown("Fire3") == true)
+        {
+            Kill();
+        }
+        if(Input.GetButtonDown("Fire4") == true)
+        {
+            EndGame();
+        }
        
     }
 
@@ -208,7 +219,7 @@ public class PlayerController : MonoBehaviour
     public void IsDead()
     {
         Debug.Log("Game Over (from player)");
-        gameController.GameOver();
+        gameController.DieAndRetry();
     }
 
     public void Reset()
@@ -222,6 +233,11 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("IsFalling", false);
         _animator.SetBool("IsDoingAction", false);
         _animator.Play("Idle");
+    }
+
+    public void EndGame()
+    {
+        gameController.EndGame();
     }
 
 }

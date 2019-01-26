@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private bool _isDashing = false;
+    [SerializeField]
+    private bool _canMove = false;
 
     private Animator _animator;
 
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
+        _canMove = true;
     }
 
     // Update is called once per frame
@@ -38,12 +41,11 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        if(_isDashing == false)
+        if(_canMove == true)
         {
             Move();
         }
         
-        DoAction();
         Dash();
        
     }
@@ -72,20 +74,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    protected void DoAction() {
-        if(Input.GetButtonDown("Fire1"))
+    protected void DoAction(Trigger trigger) {
+        if(Input.GetButtonDown("Fire1") && _isDashing == false)
         {
-            Kill();
+            _canMove = false;
+            _animator.SetBool("IsDoingAction", true);
             Debug.Log("DO ACTION !");
+            trigger.DoActiveTriggerFromAction();
         }
+    }
+
+    public void ActionDone()
+    {
+        _canMove = true;
+        _animator.SetBool("IsDoingAction", false);
     }
 
     protected void Dash() {
 
-        if(_dashCurrentCooldown <= Time.time && Input.GetButtonDown("Fire2") && _isDashing == false)
+        if(_dashCurrentCooldown <= Time.time && Input.GetButtonDown("Fire2") && _isDashing == false && _canMove == true)
         {
             _isDashing = true;
-            this.GetComponent<Collider>().enabled = false;
+            _canMove = false;
             _dashCurrentCooldown = Time.time + _dashCooldown;
             _animator.SetBool("IsDashing", _isDashing);
         }
@@ -101,12 +111,13 @@ public class PlayerController : MonoBehaviour
 
     public void StopDash() {
         _isDashing = false;
+        _canMove = true;
         _animator.SetBool("IsDashing", _isDashing);
-        this.GetComponent<Collider>().enabled = true;
     }
 
     protected void Kill() {
         _isDead = true;
+        _animator.SetBool("IsDashing", false);
         _animator.SetBool("IsDead", true);
         Debug.Log("YOU DIE !");
     }
@@ -117,13 +128,28 @@ public class PlayerController : MonoBehaviour
             Trap trap = other.GetComponent<Trap>();
             if(trap != null)
             {
-                trap.ActiveTrap();
+                trap.ActiveTrapFromPlayer();
             }
             
             Kill();
         } else if(other.tag == "Trigger")
         {
-            other.GetComponent<Trigger>().DoActiveTrigger();
+            Trigger trigger = other.GetComponent<Trigger>();
+            if(trigger.needAction == false)
+            {
+                trigger.DoActiveTriggerFromPlayer();
+            }
+        }
+    }
+
+    void OnTriggerStay(Collider other) {
+        if(other.tag == "Trigger")
+        {
+            Trigger trigger = other.GetComponent<Trigger>();
+            if(trigger.needAction == true)
+            {
+                DoAction(trigger);
+            }
         }
     }
 
@@ -189,9 +215,12 @@ public class PlayerController : MonoBehaviour
     {
         _isDead = false;
         _isDashing = false;
+        _canMove = true;
         _animator.SetBool("IsMoving", false);
         _animator.SetBool("IsDead", false);
         _animator.SetBool("IsDashing", false);
+        _animator.SetBool("IsFalling", false);
+        _animator.SetBool("IsDoingAction", false);
         _animator.Play("Idle");
     }
 

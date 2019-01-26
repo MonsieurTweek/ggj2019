@@ -6,6 +6,8 @@ public class ArrowLauncher : Trap
 {
     public bool isFiring = false;
 
+    public bool canFire = true;
+
     public ArrowController arrow;
     public float timeBetweenShot;
     private float shotCounter;
@@ -31,6 +33,10 @@ public class ArrowLauncher : Trap
     // Update is called once per frame
     void Update()
     {
+        if(canFire == false)
+        {
+            return;
+        }
         if(isFiring)
         {
             shotCounter -= Time.deltaTime;
@@ -80,7 +86,15 @@ public class ArrowLauncher : Trap
         arrow.gameObject.SetActive(false);
     }
 
-    public override void ActiveTrap() {
-        isFiring = true;
+    public override void ActiveTrapFromTrigger() {
+        isFiring = false;
+        canFire = false;
+    }
+
+    public override void ActiveTrapFromPlayer() {
+        if(canFire == true)
+        {
+            isFiring = true;
+        }
     }
 }

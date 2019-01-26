@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Scripts.meta~bf5dface626271b053eaec5844e11b1dfe434f7d
 guid: ad13372db9d5bcc409cd80500e6d1a57
+=======
+guid: bfa19982d1f537a469c621101b721bc4
+>>>>>>> Stashed changes:Assets/Props/Chara.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

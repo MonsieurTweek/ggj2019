@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
             Move();
         }
         
-        DoAction();
         Dash();
        
     }
@@ -75,12 +74,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    protected void DoAction() {
+    protected void DoAction(Trigger trigger) {
         if(Input.GetButtonDown("Fire1") && _isDashing == false)
         {
             _canMove = false;
             _animator.SetBool("IsDoingAction", true);
             Debug.Log("DO ACTION !");
+            trigger.DoActiveTrigger();
         }
     }
 
@@ -134,7 +134,22 @@ public class PlayerController : MonoBehaviour
             Kill();
         } else if(other.tag == "Trigger")
         {
-            other.GetComponent<Trigger>().DoActiveTrigger();
+            Trigger trigger = other.GetComponent<Trigger>();
+            if(trigger.needAction == false)
+            {
+                trigger.DoActiveTrigger();
+            }
+        }
+    }
+
+    void OnTriggerStay(Collider other) {
+        if(other.tag == "Trigger")
+        {
+            Trigger trigger = other.GetComponent<Trigger>();
+            if(trigger.needAction == true)
+            {
+                DoAction(trigger);
+            }
         }
     }
 

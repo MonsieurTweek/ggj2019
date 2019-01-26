@@ -6,6 +6,7 @@ public class Trigger : MonoBehaviour
 {
 
     public Trap target;
+    public bool needAction = true;
 
     // Start is called before the first frame update
     void Start()

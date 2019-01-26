@@ -6,23 +6,35 @@ public class Laser : Trap
 {
 
     [SerializeField]
-    float _laserCooldown = 1.0f;
+    private float _laserCooldown = 1.0f;
 
     [SerializeField]
-    float _laserCurrentCooldown = 0.0f;
+    private float _laserCurrentCooldown = 0.0f;
 
     [SerializeField]
-    bool _isActive = true;
+    private bool _isActive = true;
 
     [SerializeField]
-    bool _canBlink = true;
+    private bool _canBlink = true;
+
+    private Renderer[] _laserRenderers;
+    private Collider _selfCollider;
 
     public override void ActiveTrapFromPlayer() {
-        
+        _canBlink = false;
+        _selfCollider.enabled = false;
     }
 
     public override void ActiveTrapFromTrigger() {
         _canBlink = false;
+        _isActive = false;
+
+        _selfCollider.enabled = _isActive;
+
+        foreach(Renderer laserRenderer in _laserRenderers)
+        {
+            laserRenderer.enabled = _isActive;
+        }
     }
 
     protected void Blink() {
@@ -33,10 +45,9 @@ public class Laser : Trap
         if(_laserCurrentCooldown <= Time.time)
         {
             _laserCurrentCooldown = Time.time + _laserCooldown;
-            this.GetComponent<Collider>().enabled = !_isActive;
-
-            Renderer[] laserRenderers = GetComponentsInChildren<Renderer>();
-            foreach(Renderer laserRenderer in laserRenderers)
+            _selfCollider.enabled = !_isActive;
+           
+            foreach(Renderer laserRenderer in _laserRenderers)
             {
                 laserRenderer.enabled = !_isActive;
             }
@@ -48,7 +59,8 @@ public class Laser : Trap
     // Start is called before the first frame update
     void Start()
     {
-        
+        _laserRenderers = GetComponentsInChildren<Renderer>();
+        _selfCollider = GetComponent<Collider>();
     }
 
     // Update is called once per frame

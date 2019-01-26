@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float _speed = 0.1f;
+    private float _speed = 2.8f;
 
     [SerializeField]
     private float _dashSpeed = 10f;
@@ -44,14 +44,13 @@ public class PlayerController : MonoBehaviour
        
     }
 
+
     protected void Move() {
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-        Quaternion rotationVector = new Quaternion(0, Input.GetAxis("RotationHorizontal"), 0, 0);
-
         transform.position = transform.position + (moveVector * _speed * Time.deltaTime);
 
-        Vector3 direction = Vector3.right * Input.GetAxisRaw("RotationHorizontal") + Vector3.forward * Input.GetAxisRaw("RotationVertical");
+        Vector3 direction = Vector3.right * Input.GetAxisRaw("Horizontal") + Vector3.forward * Input.GetAxisRaw("Vertical");
 
         if(direction != Vector3.zero)
         {
@@ -89,6 +88,20 @@ public class PlayerController : MonoBehaviour
 
     protected void Kill() {
         _isDead = true;
+    }
+
+    // DEPRECATED
+    protected void MoveFree() {
+        Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        transform.position = transform.position + (moveVector * _speed * Time.deltaTime);
+
+        Vector3 direction = Vector3.right * Input.GetAxisRaw("RotationHorizontal") + Vector3.forward * Input.GetAxisRaw("RotationVertical");
+
+        if(direction != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
+        }
     }
 
     // DEPRECATED

@@ -6,7 +6,7 @@ public class Trigger : MonoBehaviour
 {
 
     public Trap target;
-    public Light light;
+    public Light[] lights;
     public bool needAction = true;
     public bool hideOnTrigger = false;
 
@@ -55,9 +55,12 @@ public class Trigger : MonoBehaviour
                 DisableTrigger();
             }
             Debug.Log("TRIGGER ACTION ACTIVATED !");
-        } else if(light != null)
+        } else if(lights.Length > 0)
         {
-            light.enabled = true;
+            foreach(Light light in lights)
+            {
+                light.enabled = true;
+            }
         }
     }
 

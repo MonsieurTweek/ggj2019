@@ -71,8 +71,11 @@ ModelImporter:
     2100002: LuxuryLivingRoomSofa1_SofaSideCushionSG1
     2100004: LuxuryLivingRoomSofa1_CouchCushion3SG1
     2100006: LuxuryLivingRoomSofa1_CouchCushion3SG3
+    2100008: lambert3
     2300000: pCube5
+    2300002: //RootNode
     3300000: pCube5
+    3300002: //RootNode
     4300000: pCube5
   externalObjects: {}
   materials:

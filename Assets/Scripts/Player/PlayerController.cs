@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
     protected void DoAction() {
         if(Input.GetButtonDown("Fire1"))
         {
-            Kill();
+            _animator.SetBool("IsDoingAction", true);
             Debug.Log("DO ACTION !");
         }
     }
@@ -185,6 +185,11 @@ public class PlayerController : MonoBehaviour
         gameController.GameOver();
     }
 
+    public void ActionDone()
+    {
+        _animator.SetBool("IsDoingAction", false);
+    }
+
     public void Reset()
     {
         _isDead = false;
@@ -192,6 +197,8 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("IsMoving", false);
         _animator.SetBool("IsDead", false);
         _animator.SetBool("IsDashing", false);
+        _animator.SetBool("IsFalling", false);
+        _animator.SetBool("IsDoingAction", false);
         _animator.Play("Idle");
     }
 

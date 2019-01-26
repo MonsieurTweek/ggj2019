@@ -21,10 +21,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private bool _isDashing = false;
 
+    private Animator _animator;
+
     // Start is called before the first frame update
     void Start()
     {
-       
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,17 @@ public class PlayerController : MonoBehaviour
 
     protected void Move() {
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        if((Mathf.Abs(moveVector.x) > 0 || Mathf.Abs(moveVector.z) > 0))
+        {
+            if(_animator.GetBool("IsMoving") == false)
+            {
+                _animator.SetBool("IsMoving", true);
+            }
+        } else
+        {
+            _animator.SetBool("IsMoving", false);
+        }
 
         transform.position = transform.position + (moveVector * _speed * Time.deltaTime);
 
@@ -83,7 +96,9 @@ public class PlayerController : MonoBehaviour
         {
             _isDashing = false;
         }
-        
+
+        _animator.SetBool("IsDashing", _isDashing);
+
     }
 
     protected void Kill() {

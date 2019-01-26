@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 58337abdc7f9cd7409fde18f0cd86447
+=======
+guid: 7d490876db895044aacf3ddae2d2d8ec
+>>>>>>> Stashed changes
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:

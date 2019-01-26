@@ -388,7 +388,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4770495001432242601}
   - component: {fileID: 5894019467688948851}
-  - component: {fileID: 2095121302}
   m_Layer: 0
   m_Name: Player_Light
   m_TagString: Untagged
@@ -448,24 +447,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &2095121302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1931509183579690975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90cacb4ebf376194a95ea6e9a12dda70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxReduction: 0.5
-  MaxIncrease: 1
-  RateDamping: 0.4
-  Strength: 20
-  StopFlickering: 0
-  _lightSource: {fileID: 0}
 --- !u!1 &1941756437486842815
 GameObject:
   m_ObjectHideFlags: 0

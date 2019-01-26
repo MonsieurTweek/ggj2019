@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Materials.meta
+guid: bd50e6c7ce9d92649bc548b2f7ee8c38
+=======
 guid: 307d63419d638944188c75826e936b12
+>>>>>>> 66a74d3250b24b8881b79f501e07409d72632742:Assets/Props/CANAPE/TEXTURE/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -8,12 +8,17 @@ public class PlayerController : MonoBehaviour
     private float _speed = 2.8f;
 
     [SerializeField]
-    private float _dashSpeed = 10f;
+    private float _dashSpeed = 6f;
+    [SerializeField]
     private float _currentDashTime = 0.0f;
     [SerializeField]
-    private float _maxDashTime = 2f;
+    private float _maxDashTime = 10f;
     [SerializeField]
-    private float _dashStoppingSpeed = 0.5f;
+    private float _dashStoppingSpeed = 1f;
+    [SerializeField]
+    private float _dashCooldown = 2.0f;
+    [SerializeField]
+    private float _dashCurrentCooldown = 0.0f;
 
     [SerializeField]
     private bool _isDead = false;
@@ -79,16 +84,19 @@ public class PlayerController : MonoBehaviour
     }
 
     protected void Dash() {
-        if(Input.GetButtonDown("Fire2") && _isDashing == false)
+
+        if(_dashCurrentCooldown <= Time.time && Input.GetButtonDown("Fire2") && _isDashing == false)
         {
             _currentDashTime = 0.0f;
             _isDashing = true;
+
+            _dashCurrentCooldown = Time.time + _dashCooldown;
         }
         if(_isDashing == true && _currentDashTime < _maxDashTime)
         {
             Vector3 directionYouWantToDash = transform.forward;
 
-            Vector3 moveDir = directionYouWantToDash.normalized * _dashSpeed * _speed;
+            Vector3 moveDir = directionYouWantToDash.normalized * _dashSpeed;
             _currentDashTime += _dashStoppingSpeed;
 
             transform.position = transform.position + (moveDir * Time.deltaTime);
@@ -103,6 +111,15 @@ public class PlayerController : MonoBehaviour
 
     protected void Kill() {
         _isDead = true;
+        Debug.Log("YOU DIE !");
+    }
+
+    public void OnTriggerEnter(Collider other) {
+        if(other.tag == "Threat")
+        {
+           // other.GetComponent<Trap>().DoActiveTrap();
+            Kill();
+        }
     }
 
     // DEPRECATED

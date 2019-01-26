@@ -85,7 +85,6 @@ public class PlayerController : MonoBehaviour
         if(_dashCurrentCooldown <= Time.time && Input.GetButtonDown("Fire2") && _isDashing == false)
         {
             _isDashing = true;
-            this.GetComponent<Collider>().enabled = false;
             _dashCurrentCooldown = Time.time + _dashCooldown;
             _animator.SetBool("IsDashing", _isDashing);
         }
@@ -102,7 +101,6 @@ public class PlayerController : MonoBehaviour
     public void StopDash() {
         _isDashing = false;
         _animator.SetBool("IsDashing", _isDashing);
-        this.GetComponent<Collider>().enabled = true;
     }
 
     protected void Kill() {

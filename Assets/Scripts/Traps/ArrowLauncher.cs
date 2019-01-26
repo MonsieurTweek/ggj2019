@@ -80,7 +80,10 @@ public class ArrowLauncher : Trap
         arrow.gameObject.SetActive(false);
     }
 
-    public override void ActiveTrap() {
+    public override void ActiveTrapFromTrigger() {
         isFiring = true;
+    }
+
+    public override void ActiveTrapFromPlayer() {
     }
 }

@@ -22,7 +22,7 @@ public class Trigger : MonoBehaviour
     public void DoActiveTrigger() {
         if(target != null)
         {
-            target.ActiveTrap();
+            target.ActiveTrapFromTrigger();
         }
         Debug.Log("TRIGGER ACTIVATED !");
     }

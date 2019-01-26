@@ -117,6 +117,7 @@ public class PlayerController : MonoBehaviour
 
     protected void Kill() {
         _isDead = true;
+        _animator.SetBool("IsDashing", false);
         _animator.SetBool("IsDead", true);
         Debug.Log("YOU DIE !");
     }
@@ -127,7 +128,7 @@ public class PlayerController : MonoBehaviour
             Trap trap = other.GetComponent<Trap>();
             if(trap != null)
             {
-                trap.ActiveTrap();
+                trap.ActiveTrapFromPlayer();
             }
             
             Kill();

@@ -48,8 +48,8 @@ public class Laser : Trap
         {
             if(audioSource.isPlaying == false)
             {
-                //audioSource.loop = true;
-                //PlaySFX(KeySFX.Ambiance);
+                audioSource.loop = true;
+                PlaySFX(KeySFX.Ambiance);
             }
             return;
         }

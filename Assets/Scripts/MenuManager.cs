@@ -18,9 +18,13 @@ public class MenuManager : MonoBehaviour
     }
     public SceneID nextScene;
 
+    [Header("----- Global -----")]
     public bool isReadyOnLoad;
     public float fakeLoadingTime = 3f;
     public Text textToDisplayWithDelay;
+    [Header("----- End Screen -----")]
+    public GameController gameController;
+    public Text deathCounterTextArea;
 
     private bool _isReady = false;
     private int _nextSceneId;
@@ -55,6 +59,25 @@ public class MenuManager : MonoBehaviour
             case SceneID.End:
                 _nextSceneId = END_SCENE_ID;
                 break;
+        }
+
+        if(deathCounterTextArea != null)
+        {
+            int deathCounter = gameController.GetDeathCounter();
+            if (deathCounter > 1)
+            {
+                deathCounterTextArea.text = "By dying only " + deathCounter + " times ...";
+            }
+            else if (deathCounter == 1)
+            {
+                deathCounterTextArea.text = "By dying only " + deathCounter + " time ...";
+            }
+            else
+            {
+                deathCounterTextArea.text = "Without any death ?!";
+            }
+
+            gameController.RestartGame();
         }
     }
 

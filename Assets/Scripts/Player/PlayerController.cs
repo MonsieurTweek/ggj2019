@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private Animator _animator;
 
     public GameController gameController;
+    public PlayerAudioController playerAudioController;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,16 @@ public class PlayerController : MonoBehaviour
         }
         
         Dash();
+
+        // Debug
+        if(Input.GetButtonDown("Fire3") == true)
+        {
+            Kill();
+        }
+        if(Input.GetButtonDown("Fire4") == true)
+        {
+            EndGame();
+        }
        
     }
 
@@ -59,9 +71,14 @@ public class PlayerController : MonoBehaviour
             {
                 _animator.SetBool("IsMoving", true);
             }
-        } else
+            if(playerAudioController.audioSource.isPlaying == false)
+            {
+                playerAudioController.PlaySFX(PlayerAudioController.KeySFX.Walk);
+            }
+        } else if(_animator.GetBool("IsMoving") == true)
         {
             _animator.SetBool("IsMoving", false);
+            playerAudioController.StopSFX();
         }
 
         transform.position = transform.position + (moveVector * _speed * Time.deltaTime);
@@ -98,6 +115,8 @@ public class PlayerController : MonoBehaviour
             _canMove = false;
             _dashCurrentCooldown = Time.time + _dashCooldown;
             _animator.SetBool("IsDashing", _isDashing);
+
+            playerAudioController.PlaySFX(PlayerAudioController.KeySFX.Dash);
         }
         if(_isDashing == true)
         {
@@ -113,12 +132,18 @@ public class PlayerController : MonoBehaviour
         _isDashing = false;
         _canMove = true;
         _animator.SetBool("IsDashing", _isDashing);
+        if(_animator.GetBool("IsMoving") == true)
+        {
+            playerAudioController.PlaySFX(PlayerAudioController.KeySFX.Walk);
+        }
     }
 
     protected void Kill() {
         _isDead = true;
         _animator.SetBool("IsDashing", false);
         _animator.SetBool("IsDead", true);
+
+        playerAudioController.PlaySFX(PlayerAudioController.KeySFX.Death);
         Debug.Log("YOU DIE !");
     }
 
@@ -222,6 +247,11 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("IsFalling", false);
         _animator.SetBool("IsDoingAction", false);
         _animator.Play("Idle");
+    }
+
+    public void EndGame()
+    {
+        gameController.EndGame();
     }
 
 }

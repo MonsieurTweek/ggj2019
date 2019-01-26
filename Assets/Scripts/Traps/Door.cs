@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Door : Trap
 {
+    public float animationSpeed = 1.0f;
 
     [SerializeField]
     private bool _isOpen = true;
@@ -31,6 +32,9 @@ public class Door : Trap
     void Start()
     {
         _doorColliders = GetComponentsInChildren<Collider>();
+
+        Animator animator = gameObject.GetComponent<Animator>();
+        animator.speed = animationSpeed;
     }
 
     // Update is called once per frame

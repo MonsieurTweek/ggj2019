@@ -24,6 +24,7 @@ public class Laser : Trap
         //_canBlink = false;
     }
 
+    // Désactive le laser via un interrupteur
     public override void ActiveTrapFromTrigger() {
         if(_isActive == false)
         {
@@ -34,8 +35,9 @@ public class Laser : Trap
         _blinkState = false;
 
         _selfCollider.enabled = _blinkState;
+        StopSFX();
 
-        foreach(Renderer laserRenderer in _laserRenderers)
+        foreach (Renderer laserRenderer in _laserRenderers)
         {
             laserRenderer.enabled = _blinkState;
         }
@@ -44,16 +46,30 @@ public class Laser : Trap
     protected void Blink() {
         if(_canBlink == false)
         {
+            if(audioSource.isPlaying == false)
+            {
+                audioSource.loop = true;
+                PlaySFX(KeySFX.Ambiance);
+            }
             return;
         }
         if(_laserCurrentCooldown <= Time.time)
         {
             _laserCurrentCooldown = Time.time + _laserCooldown;
             _selfCollider.enabled = !_blinkState;
+
+            if(_selfCollider.enabled == true)
+            {
+                PlaySFX(KeySFX.Enable);
+            } else
+            {
+                StopSFX();
+            }
            
             foreach(Renderer laserRenderer in _laserRenderers)
             {
                 laserRenderer.enabled = !_blinkState;
+
             }
 
             _blinkState = !_blinkState;

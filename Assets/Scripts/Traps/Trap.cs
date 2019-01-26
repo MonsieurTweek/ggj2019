@@ -5,8 +5,22 @@ using UnityEngine;
 abstract public class Trap : MonoBehaviour
 {
 
+    public enum KeySFX
+    {
+        Enable,
+        Ambiance,
+        Disable,
+        Death
+    }
+
     [SerializeField]
     protected bool _isActive = true;
+
+    public AudioSource audioSource;
+    public AudioClip enableSFX;
+    public AudioClip ambianceSFX;
+    public AudioClip disableSFX;
+    public AudioClip deathSFX;
 
     public abstract void ActiveTrapFromPlayer();
 
@@ -32,5 +46,39 @@ abstract public class Trap : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PlaySFX(KeySFX key)
+    {
+        AudioClip newClip = null;
+        bool playOnLoop = false;
+
+        switch (key)
+        {
+            case KeySFX.Enable:
+                newClip = enableSFX;
+                break;
+            case KeySFX.Ambiance:
+                newClip = ambianceSFX;
+                break;
+            case KeySFX.Disable:
+                newClip = disableSFX;
+                break;
+            case KeySFX.Death:
+                newClip = deathSFX;
+                break;
+        }
+
+        if (newClip != null && (playOnLoop == false || audioSource.isPlaying == false))
+        {
+            audioSource.clip = newClip;
+            audioSource.loop = playOnLoop;
+            audioSource.Play();
+        }
+    }
+
+    public void StopSFX()
+    {
+        audioSource.Stop();
     }
 }

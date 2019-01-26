@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
         {
             _currentDashTime = 0.0f;
             _isDashing = true;
-
+            this.GetComponent<Collider>().enabled = false;
             _dashCurrentCooldown = Time.time + _dashCooldown;
         }
         if(_isDashing == true && _currentDashTime < _maxDashTime)
@@ -103,6 +103,7 @@ public class PlayerController : MonoBehaviour
         } else
         {
             _isDashing = false;
+            this.GetComponent<Collider>().enabled = true;
         }
 
         _animator.SetBool("IsDashing", _isDashing);
@@ -117,8 +118,16 @@ public class PlayerController : MonoBehaviour
     public void OnTriggerEnter(Collider other) {
         if(other.tag == "Threat")
         {
-           // other.GetComponent<Trap>().DoActiveTrap();
+            Trap trap = other.GetComponent<Trap>();
+            if(trap != null)
+            {
+                trap.ActiveTrap();
+            }
+            
             Kill();
+        } else if(other.tag == "Trigger")
+        {
+            other.GetComponent<Trigger>().DoActiveTrigger();
         }
     }
 

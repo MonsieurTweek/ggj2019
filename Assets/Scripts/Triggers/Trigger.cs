@@ -5,7 +5,7 @@ using UnityEngine;
 public class Trigger : MonoBehaviour
 {
 
-    public Trap target;
+    public Trap[] targets;
     public Light[] lights;
     public bool needAction = true;
     public bool hideOnTrigger = false;
@@ -30,9 +30,13 @@ public class Trigger : MonoBehaviour
         {
             return;
         }
-        if(target != null)
+        if(targets.Length > 0)
         {
-            target.ActiveTrapFromPlayer();
+            foreach(Trap target in targets)
+            {
+                target.ActiveTrapFromPlayer();
+            }
+           
             if(hideOnTrigger == true)
             {
                 DisableTrigger();
@@ -47,9 +51,13 @@ public class Trigger : MonoBehaviour
         {
             return;
         }
-        if(target != null)
+        if(targets.Length > 0)
         {
-            target.ActiveTrapFromTrigger();
+            foreach(Trap target in targets)
+            {
+                target.ActiveTrapFromTrigger();
+            }
+                
             if(hideOnTrigger == true)
             {
                 DisableTrigger();

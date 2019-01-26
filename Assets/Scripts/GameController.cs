@@ -8,10 +8,12 @@ public class GameController : MonoBehaviour
     public PlayerController player;
     public GameObject spawner;
 
+    public int deathCounter;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        deathCounter = 0;
     }
 
     // Update is called once per frame
@@ -20,8 +22,9 @@ public class GameController : MonoBehaviour
         
     }
 
-    public void GameOver()
+    public void DieAndRetry()
     {
+        deathCounter++;
         player.Reset();
         player.transform.position = spawner.transform.position;
     }

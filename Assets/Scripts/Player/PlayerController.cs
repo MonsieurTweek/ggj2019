@@ -193,7 +193,7 @@ public class PlayerController : MonoBehaviour
     public void IsDead()
     {
         Debug.Log("Game Over (from player)");
-        gameController.GameOver();
+        gameController.DieAndRetry();
     }
 
     public void Reset()

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Threat
   - Trigger
+  - Light
+  - Room
   layers:
   - Default
   - TransparentFX

@@ -1373,7 +1373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isActive: 1
   audioSource: {fileID: 113492684409146079}
-  enableSFX: {fileID: 8300000, guid: 93dc4fa8890b4794097e7257dad9a147, type: 3}
+  enableSFX: {fileID: 8300000, guid: 4b77d582cae082f49a6451ecece0806d, type: 3}
   ambianceSFX: {fileID: 8300000, guid: 6122df8fd630fe140981b5809bec7a91, type: 3}
   disableSFX: {fileID: 0}
   deathSFX: {fileID: 8300000, guid: 1e2be47c55e73904b820c5475ac29489, type: 3}

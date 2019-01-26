@@ -149,6 +149,12 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnTriggerEnter(Collider other) {
+
+        if(_isDead == true)
+        {
+            return;
+        }
+
         if(other.tag == "Threat")
         {
             Trap trap = other.GetComponent<Trap>();

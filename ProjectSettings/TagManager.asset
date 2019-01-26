@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Threat
   - Trigger
+  - Light
   layers:
   - Default
   - TransparentFX

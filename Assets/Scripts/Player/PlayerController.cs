@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
             _canMove = false;
             _animator.SetBool("IsDoingAction", true);
             Debug.Log("DO ACTION !");
-            trigger.DoActiveTrigger();
+            trigger.DoActiveTriggerFromAction();
         }
     }
 
@@ -137,7 +137,7 @@ public class PlayerController : MonoBehaviour
             Trigger trigger = other.GetComponent<Trigger>();
             if(trigger.needAction == false)
             {
-                trigger.DoActiveTrigger();
+                trigger.DoActiveTriggerFromPlayer();
             }
         }
     }

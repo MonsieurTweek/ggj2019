@@ -20,11 +20,19 @@ public class Trigger : MonoBehaviour
         
     }
 
-    public void DoActiveTrigger() {
+    public void DoActiveTriggerFromPlayer() {
+        if(target != null)
+        {
+            target.ActiveTrapFromPlayer();
+        }
+        Debug.Log("TRIGGER PLAYER ACTIVATED !");
+    }
+
+    public void DoActiveTriggerFromAction() {
         if(target != null)
         {
             target.ActiveTrapFromTrigger();
+            Debug.Log("TRIGGER ACTION ACTIVATED !");
         }
-        Debug.Log("TRIGGER ACTIVATED !");
     }
 }

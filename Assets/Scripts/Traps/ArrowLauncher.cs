@@ -48,13 +48,10 @@ public class ArrowLauncher : Trap
     public void Shoot() {
         
             ArrowController newArrow = ActiveArrow();
-            //newArrow.originCamera = gunOriginCamera;
-
+            
             newArrow.transform.position = firePoint.position;
             newArrow.transform.rotation = firePoint.rotation;
-            //newArrow.hitTag = hitTag;
-
-
+            isFiring = false;
     }
 
     public ArrowController ActiveArrow() {

@@ -11,12 +11,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _dashSpeed = 6f;
     [SerializeField]
-    private float _currentDashTime = 0.0f;
-    [SerializeField]
-    private float _maxDashTime = 10f;
-    [SerializeField]
-    private float _dashStoppingSpeed = 1f;
-    [SerializeField]
     private float _dashCooldown = 2.0f;
     [SerializeField]
     private float _dashCurrentCooldown = 0.0f;
@@ -54,7 +48,6 @@ public class PlayerController : MonoBehaviour
        
     }
 
-
     protected void Move() {
         Vector3 moveVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
@@ -91,27 +84,25 @@ public class PlayerController : MonoBehaviour
 
         if(_dashCurrentCooldown <= Time.time && Input.GetButtonDown("Fire2") && _isDashing == false)
         {
-            _currentDashTime = 0.0f;
             _isDashing = true;
             this.GetComponent<Collider>().enabled = false;
             _dashCurrentCooldown = Time.time + _dashCooldown;
+            _animator.SetBool("IsDashing", _isDashing);
         }
-        if(_isDashing == true && _currentDashTime < _maxDashTime)
+        if(_isDashing == true)
         {
             Vector3 directionYouWantToDash = transform.forward;
 
             Vector3 moveDir = directionYouWantToDash.normalized * _dashSpeed;
-            _currentDashTime += _dashStoppingSpeed;
 
             transform.position = transform.position + (moveDir * Time.deltaTime);
-        } else
-        {
-            _isDashing = false;
-            this.GetComponent<Collider>().enabled = true;
         }
+    }
 
+    public void StopDash() {
+        _isDashing = false;
         _animator.SetBool("IsDashing", _isDashing);
-
+        this.GetComponent<Collider>().enabled = true;
     }
 
     protected void Kill() {

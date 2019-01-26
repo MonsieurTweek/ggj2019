@@ -231,7 +231,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.9964391
+        functionName: StopDash
+        data: 
+        objectReferenceParameter: {fileID: 7820487425451520995, guid: 944be52e3ed15064a86fe8e42c8341a7,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

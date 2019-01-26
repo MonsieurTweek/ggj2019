@@ -1,19 +1,14 @@
 fileFormatVersion: 2
-guid: 3f32564ca4d32504086c4cd0554f301a
+guid: 12f3feea9f59a2b40bc84a32424fd0d1
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: m_bfeather
     400000: //RootNode
-    400002: m_bfeather
-    2100000: 8___Default
-    2100002: 9___Default
-    2100004: 7___Default
-    2100006: m_bfeatherMat
-    2300000: m_bfeather
-    3300000: m_bfeather
-    4300000: m_bfeather
+    2100000: lambert1
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCube11
   externalObjects: {}
   materials:
     importMaterials: 1

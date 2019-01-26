@@ -96,7 +96,6 @@ public class PlayerController : MonoBehaviour
         {
             _isDashing = true;
             _canMove = false;
-            this.GetComponent<Collider>().enabled = false;
             _dashCurrentCooldown = Time.time + _dashCooldown;
             _animator.SetBool("IsDashing", _isDashing);
         }
@@ -114,7 +113,6 @@ public class PlayerController : MonoBehaviour
         _isDashing = false;
         _canMove = true;
         _animator.SetBool("IsDashing", _isDashing);
-        this.GetComponent<Collider>().enabled = true;
     }
 
     protected void Kill() {

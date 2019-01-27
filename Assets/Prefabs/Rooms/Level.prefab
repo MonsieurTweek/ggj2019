@@ -118,9 +118,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1515432971151186241}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1747263439728225241 stripped
+--- !u!114 &217509432669858169 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 952617515738378904, guid: 656b3092e3c42ce4b9787d0da7257da4,
+  m_CorrespondingSourceObject: {fileID: 1586210377399857208, guid: 656b3092e3c42ce4b9787d0da7257da4,
     type: 3}
   m_PrefabInstance: {fileID: 1515432971151186241}
   m_PrefabAsset: {fileID: 0}
@@ -506,7 +506,7 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1747263439728225241}
+      objectReference: {fileID: 217509432669858169}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87cf3aeffd8240742852940d7e155cb1, type: 3}
 --- !u!4 &476104173929564737 stripped

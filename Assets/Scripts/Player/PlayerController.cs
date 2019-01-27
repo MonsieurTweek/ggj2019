@@ -149,6 +149,12 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnTriggerEnter(Collider other) {
+
+        if(_isDead == true)
+        {
+            return;
+        }
+
         if(other.tag == "Threat")
         {
             Trap trap = other.GetComponent<Trap>();
@@ -165,6 +171,20 @@ public class PlayerController : MonoBehaviour
             {
                 trigger.DoActiveTriggerFromPlayer();
             }
+        } else if(other.tag == "Room")
+        {
+
+            RoomController roomController;
+
+            GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
+            foreach(GameObject room in rooms)
+            {
+                roomController = room.GetComponent<RoomController>();
+                roomController.DisableLocalAudioSource();
+            }
+
+            roomController = other.GetComponent<RoomController>();
+            roomController.EnableLocalAudioSource();    
         }
     }
 
@@ -248,6 +268,16 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("IsFalling", false);
         _animator.SetBool("IsDoingAction", false);
         _animator.Play("Idle");
+
+        // Disable sounds
+        RoomController roomController;
+
+        GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
+        foreach (GameObject room in rooms)
+        {
+            roomController = room.GetComponent<RoomController>();
+            roomController.DisableLocalAudioSource();
+        }
     }
 
     public void EndGame()

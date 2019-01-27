@@ -15,7 +15,6 @@ public class GameController : MonoBehaviour
     public GameObject spawner;
 
     private static int _deathCounter = 0;
-    private static bool _isGameOver = false;
 
     // Start is called before the first frame update
     void Start()

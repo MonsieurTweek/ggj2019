@@ -15,6 +15,8 @@ abstract public class Trap : MonoBehaviour
 
     [SerializeField]
     protected bool _isActive = true;
+    [SerializeField]
+    protected bool _resetActiveOnInit = true;
 
     public AudioSource audioSource;
     public AudioClip enableSFX;
@@ -22,12 +24,20 @@ abstract public class Trap : MonoBehaviour
     public AudioClip disableSFX;
     public AudioClip deathSFX;
 
+    public bool isActive() {
+        return _isActive;
+    }
+
     public abstract void ActiveTrapFromPlayer();
 
     public abstract void ActiveTrapFromTrigger();
 
     public virtual void EnableTrap() {
-        _isActive = true;
+        if(_resetActiveOnInit == true)
+        {
+            _isActive = true;
+        }
+        
         transform.root.gameObject.SetActive(true);
     }
 
@@ -48,10 +58,9 @@ abstract public class Trap : MonoBehaviour
         
     }
 
-    public void PlaySFX(KeySFX key)
+    public void PlaySFX(KeySFX key, bool playOnLoop = false)
     {
         AudioClip newClip = null;
-        bool playOnLoop = false;
 
         switch (key)
         {

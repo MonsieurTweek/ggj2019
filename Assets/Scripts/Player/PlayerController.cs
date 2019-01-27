@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         // Debug
         if(Input.GetButtonDown("Fire3") == true)
         {
-            //Kill();
+            Kill();
         }
         if(Input.GetButtonDown("Fire4") == true)
         {
@@ -163,10 +163,16 @@ public class PlayerController : MonoBehaviour
             }
             if(trap != null)
             {
+                if(trap.isActive())
+                {
+                    Kill();
+                }
                 trap.ActiveTrapFromPlayer();
+            } else
+            {
+                Kill();
             }
-            
-            Kill();
+
         } else if(other.tag == "Trigger")
         {
             Trigger trigger = other.GetComponent<Trigger>();

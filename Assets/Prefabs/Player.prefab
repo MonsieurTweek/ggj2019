@@ -1988,7 +1988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 3.5
   _dashSpeed: 5.6
-  _dashCooldown: 2
+  _dashCooldown: 0.8
   _dashCurrentCooldown: 0
   _isDead: 0
   _isDashing: 0

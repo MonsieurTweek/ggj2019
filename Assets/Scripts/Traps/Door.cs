@@ -12,7 +12,8 @@ public class Door : Trap
     private Collider[] _doorColliders;
 
     public override void ActiveTrapFromPlayer() {
-        throw new System.NotImplementedException();
+        PlaySFX(KeySFX.Death);
+        Debug.Log("Dead by a door");
     }
 
     public override void ActiveTrapFromTrigger() {

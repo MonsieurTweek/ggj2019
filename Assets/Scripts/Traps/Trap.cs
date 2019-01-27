@@ -54,10 +54,9 @@ abstract public class Trap : MonoBehaviour
         
     }
 
-    public void PlaySFX(KeySFX key)
+    public void PlaySFX(KeySFX key, bool playOnLoop = false)
     {
         AudioClip newClip = null;
-        bool playOnLoop = false;
 
         switch (key)
         {

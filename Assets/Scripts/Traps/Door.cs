@@ -10,6 +10,7 @@ public class Door : Trap
     private bool _isOpen = true;
 
     private Collider[] _doorColliders;
+    private Animator _animator;
 
     public override void ActiveTrapFromPlayer() {
         PlaySFX(KeySFX.Death);
@@ -28,13 +29,23 @@ public class Door : Trap
         _isOpen = !_isOpen;
     }
 
+    public void StartSound()
+    {
+        PlaySFX(KeySFX.Ambiance);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         _doorColliders = GetComponentsInChildren<Collider>();
 
-        Animator animator = gameObject.GetComponent<Animator>();
-        animator.speed = animationSpeed;
+        _animator = gameObject.GetComponent<Animator>();
+        _animator.speed = animationSpeed;
+    }
+
+    private void Awake()
+    {
+        
     }
 
     // Update is called once per frame

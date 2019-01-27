@@ -163,10 +163,16 @@ public class PlayerController : MonoBehaviour
             }
             if(trap != null)
             {
+                if(trap.isActive())
+                {
+                    Kill();
+                }
                 trap.ActiveTrapFromPlayer();
+            } else
+            {
+                Kill();
             }
-            
-            Kill();
+
         } else if(other.tag == "Trigger")
         {
             Trigger trigger = other.GetComponent<Trigger>();

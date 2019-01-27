@@ -8,7 +8,10 @@ public class Hatch : Trap
     private Animator _animator;
 
     public override void ActiveTrapFromPlayer() {
-        _animator.SetBool("isTriggered", true);
+        if(_isActive == true)
+        {
+            _animator.SetBool("isTriggered", true);
+        }
     }
 
     public override void ActiveTrapFromTrigger() {

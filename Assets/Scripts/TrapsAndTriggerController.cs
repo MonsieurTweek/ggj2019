@@ -34,7 +34,7 @@ public class TrapsAndTriggerController : MonoBehaviour
             Trap trapGO = go.GetComponent<Trap>();
             if(trapGO != null)
             {
-                trapGO.EnableTrap();
+                trapGO.DisableTrap();
             }
         }
     }
@@ -51,7 +51,7 @@ public class TrapsAndTriggerController : MonoBehaviour
         GameObject[] triggersGO = GameObject.FindGameObjectsWithTag("Trigger");
         foreach(GameObject go in triggersGO)
         {
-            go.GetComponent<Trigger>().EnableTrigger();
+            go.GetComponent<Trigger>().DisableTrigger();
         }
     }
 }

@@ -4431,6 +4431,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2436252502676879289, guid: 1845a62f7e091ab4985dbe68e9027430,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.63
+      objectReference: {fileID: 0}
     - target: {fileID: 649090828029187739, guid: 1845a62f7e091ab4985dbe68e9027430,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4496,8 +4501,54 @@ PrefabInstance:
       propertyPath: targets.Array.data[0]
       value: 
       objectReference: {fileID: 1813298932}
+    - target: {fileID: 2033487571300925110, guid: 1845a62f7e091ab4985dbe68e9027430,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.852
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033487571300925110, guid: 1845a62f7e091ab4985dbe68e9027430,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 2033487571300925110, guid: 1845a62f7e091ab4985dbe68e9027430,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.552
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700975503583668750, guid: 1845a62f7e091ab4985dbe68e9027430,
+        type: 3}
+      propertyPath: lights.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2700975503583668750, guid: 1845a62f7e091ab4985dbe68e9027430,
+        type: 3}
+      propertyPath: lights.Array.data[0]
+      value: 
+      objectReference: {fileID: 509731890}
+    - target: {fileID: 2700975503583668750, guid: 1845a62f7e091ab4985dbe68e9027430,
+        type: 3}
+      propertyPath: lights.Array.data[1]
+      value: 
+      objectReference: {fileID: 1899343722}
+    - target: {fileID: 2700975503583668750, guid: 1845a62f7e091ab4985dbe68e9027430,
+        type: 3}
+      propertyPath: lights.Array.data[2]
+      value: 
+      objectReference: {fileID: 1332734549}
+    - target: {fileID: 2700975503583668750, guid: 1845a62f7e091ab4985dbe68e9027430,
+        type: 3}
+      propertyPath: lights.Array.data[3]
+      value: 
+      objectReference: {fileID: 610981550}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1845a62f7e091ab4985dbe68e9027430, type: 3}
+--- !u!108 &509731890 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 9073532831473457598, guid: 1845a62f7e091ab4985dbe68e9027430,
+    type: 3}
+  m_PrefabInstance: {fileID: 170612548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &535176425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4612,6 +4663,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &610981550 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 9209602932369688494, guid: 1845a62f7e091ab4985dbe68e9027430,
+    type: 3}
+  m_PrefabInstance: {fileID: 170612548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &859846877 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7705308778718436117, guid: 1d2a9740045ed4c408707edb19ddbdd3,
@@ -4693,6 +4750,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90636b10bdf65c843bc816857907c645, type: 3}
+--- !u!108 &1332734549 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 6135981992312697819, guid: 1845a62f7e091ab4985dbe68e9027430,
+    type: 3}
+  m_PrefabInstance: {fileID: 170612548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1542226192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4797,6 +4860,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6632f9ac9d0a694ca2c3c463d5c66c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!108 &1899343722 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 2357822060272834622, guid: 1845a62f7e091ab4985dbe68e9027430,
+    type: 3}
+  m_PrefabInstance: {fileID: 170612548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!108 &2097441275 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 7514740040131362126, guid: 1d52b101b3342f94ebdccf1254db650e,

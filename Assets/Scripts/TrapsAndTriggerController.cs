@@ -16,11 +16,27 @@ public class TrapsAndTriggerController : MonoBehaviour
     }
 
     public void EnableAllTraps() {
-
+        GameObject[] triggersGO = GameObject.FindGameObjectsWithTag("Threat");
+        foreach(GameObject go in triggersGO)
+        {
+            Trap trapGO = go.GetComponent<Trap>();
+            if(trapGO != null)
+            {
+                trapGO.EnableTrap();
+            }
+        }
     }
 
     public void DisableAllTraps() {
-
+        GameObject[] triggersGO = GameObject.FindGameObjectsWithTag("Trap");
+        foreach(GameObject go in triggersGO)
+        {
+            Trap trapGO = go.GetComponent<Trap>();
+            if(trapGO != null)
+            {
+                trapGO.EnableTrap();
+            }
+        }
     }
 
     public void EnableAllTrigers() {

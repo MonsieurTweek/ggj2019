@@ -11,7 +11,7 @@ public class Trigger : MonoBehaviour
     public bool hideOnTrigger = false;
 
     [SerializeField]
-    private bool _isActive = true;
+    protected bool _isActive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -57,24 +57,24 @@ public class Trigger : MonoBehaviour
             {
                 target.ActiveTrapFromTrigger();
             }
-                
-            if(hideOnTrigger == true)
-            {
-                DisableTrigger();
-            }
-            Debug.Log("TRIGGER ACTION ACTIVATED !");
-        } else if(lights.Length > 0)
+         }
+        if(lights.Length > 0)
         {
             foreach(Light light in lights)
             {
                 light.enabled = true;
             }
         }
+
+        if(hideOnTrigger == true)
+        {
+            DisableTrigger();
+        }
     }
 
-    public void EnableTrigger() { 
+    public virtual void EnableTrigger() { 
         _isActive = true;
-        transform.root.gameObject.SetActive(true);
+        transform.gameObject.SetActive(true);
 
         if(lights.Length > 0)
         {
@@ -83,12 +83,10 @@ public class Trigger : MonoBehaviour
                 light.enabled = false;
             }
         }
-
     }
 
-    public void DisableTrigger() {
+    public virtual void DisableTrigger() {
         _isActive = false;
-        transform.root.gameObject.SetActive(false);
-
+        transform.gameObject.SetActive(false);
     }
 }

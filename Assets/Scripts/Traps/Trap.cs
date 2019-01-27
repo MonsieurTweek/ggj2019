@@ -38,12 +38,12 @@ abstract public class Trap : MonoBehaviour
             _isActive = true;
         }
         
-        transform.root.gameObject.SetActive(true);
+        transform.gameObject.SetActive(true);
     }
 
     public virtual void DisableTrap() {
         _isActive = false;
-        transform.root.gameObject.SetActive(false);
+        transform.gameObject.SetActive(false);
     }
 
     // Start is called before the first frame update

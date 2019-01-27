@@ -46,7 +46,7 @@ public class Trigger : MonoBehaviour
         
     }
 
-    public void DoActiveTriggerFromAction() {
+    public virtual void DoActiveTriggerFromAction() {
         if(_isActive == false)
         {
             return;

@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+<<<<<<< Updated upstream
+guid: 27e9de062a0c3b0489dc3ed03825bd24
+=======
+guid: 6ca3cf0c77e745144916de119a3c3a92
+>>>>>>> Stashed changes
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Skull And Void
+  fontNames:
+  - Skull And Void
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

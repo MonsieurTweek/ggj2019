@@ -63,7 +63,7 @@ public class Trigger : MonoBehaviour
 
             // SFX
             _audioSource.clip = disableLaserSFX;
-            _audioSource.Play();
+            _audioSource.PlayDelayed(1);
 
         }
         if(lights.Length > 0)
@@ -75,7 +75,7 @@ public class Trigger : MonoBehaviour
 
             // SFX
             _audioSource.clip = enableLightSFX;
-            _audioSource.Play();
+            _audioSource.PlayDelayed(1);
         }
 
         if(hideOnTrigger == true)

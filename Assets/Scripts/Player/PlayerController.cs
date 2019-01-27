@@ -97,7 +97,6 @@ public class PlayerController : MonoBehaviour
         {
             _canMove = false;
             _animator.SetBool("IsDoingAction", true);
-            Debug.Log("DO ACTION !");
             trigger.DoActiveTriggerFromAction();
         }
     }
@@ -145,7 +144,6 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("IsDead", true);
 
         playerAudioController.PlaySFX(PlayerAudioController.KeySFX.Death);
-        Debug.Log("YOU DIE !");
     }
 
     public void OnTriggerEnter(Collider other) {
@@ -258,7 +256,6 @@ public class PlayerController : MonoBehaviour
 
     public void IsDead()
     {
-        Debug.Log("Game Over (from player)");
         gameController.DieAndRetry();
     }
 

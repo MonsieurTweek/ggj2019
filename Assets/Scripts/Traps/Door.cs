@@ -13,7 +13,6 @@ public class Door : Trap
 
     public override void ActiveTrapFromPlayer() {
         PlaySFX(KeySFX.Death);
-        Debug.Log("Dead by a door");
     }
 
     public override void ActiveTrapFromTrigger() {

@@ -54,11 +54,11 @@ public class PlayerController : MonoBehaviour
         // Debug
         if(Input.GetButtonDown("Fire3") == true)
         {
-            Kill();
+            //Kill();
         }
         if(Input.GetButtonDown("Fire4") == true)
         {
-            EndGame();
+            //EndGame();
         }
        
     }
@@ -149,9 +149,20 @@ public class PlayerController : MonoBehaviour
     }
 
     public void OnTriggerEnter(Collider other) {
+
+        if(_isDead == true)
+        {
+            return;
+        }
+
         if(other.tag == "Threat")
         {
             Trap trap = other.GetComponent<Trap>();
+            // Cas des portes
+            if(trap == null)
+            {
+                trap = other.GetComponentInParent<Trap>();
+            }
             if(trap != null)
             {
                 trap.ActiveTrapFromPlayer();
@@ -167,8 +178,6 @@ public class PlayerController : MonoBehaviour
             }
         } else if(other.tag == "Room")
         {
-
-            Debug.Log("Enter room");
 
             RoomController roomController;
 
@@ -264,6 +273,16 @@ public class PlayerController : MonoBehaviour
         _animator.SetBool("IsFalling", false);
         _animator.SetBool("IsDoingAction", false);
         _animator.Play("Idle");
+
+        // Disable sounds
+        RoomController roomController;
+
+        GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
+        foreach (GameObject room in rooms)
+        {
+            roomController = room.GetComponent<RoomController>();
+            roomController.DisableLocalAudioSource();
+        }
     }
 
     public void EndGame()

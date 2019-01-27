@@ -22,6 +22,7 @@ public class MenuManager : MonoBehaviour
     public bool isReadyOnLoad;
     public float fakeLoadingTime = 3f;
     public Text textToDisplayWithDelay;
+    public bool needFadeOut = false;
     [Header("----- End Screen -----")]
     public GameController gameController;
     public Text deathCounterTextArea;
@@ -31,9 +32,26 @@ public class MenuManager : MonoBehaviour
 
     private float _timeLeft;
 
+    private AudioSource _audioSource;
+
+    public static float currentClipTime;
+
+    private const int TIME_TO_FADE_OUT = 2;
+    private float _elapsedTime = 0f;
+    private bool _readyToFadeOut = false;
+    private bool _isFadingOut = false;
+    private int _timerCountDown = TIME_TO_FADE_OUT;
+
     // Start is called before the first frame update
     void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
+
+        if (currentClipTime != 0f)
+        {
+            _audioSource.time = currentClipTime;
+        }
+
         if(isReadyOnLoad == true)
         {
             _isReady = true;
@@ -84,12 +102,39 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_isReady == true)
+        // Ready to go to next screen
+        if(_isReady == true)
         {
-            if(Input.GetButtonDown("Fire1") == true)
+            // Need to press A
+            if(Input.GetButtonDown("Fire1") == true && _isFadingOut == false)
             {
-                SceneManager.LoadScene(_nextSceneId);
+                // If we need a fadeout for the music, we start it
+                if (needFadeOut == true)
+                {
+                    _isFadingOut = true;
+                } else
+                {
+                    currentClipTime = _audioSource.time;
+                    SceneManager.LoadScene(_nextSceneId);
+                }
             }
+
+            if(_isFadingOut == true)
+            {
+                _elapsedTime += Time.deltaTime;
+                if (_elapsedTime >= 1f)
+                {
+                    _elapsedTime = _elapsedTime % 1f;
+                    _timerCountDown--;
+                    Debug.Log(_timerCountDown);
+                    if(_timerCountDown < 0)
+                    {
+                        SceneManager.LoadScene(_nextSceneId);
+                    }
+                }
+                FadeOutMusic();
+            }
+
         } else
         {
             _timeLeft -= Time.deltaTime;
@@ -109,5 +154,13 @@ public class MenuManager : MonoBehaviour
             textToDisplayWithDelay.enabled = true;
         }
 
+    }
+
+    public void FadeOutMusic()
+    {
+        if (_audioSource.volume > 0)
+        {
+            _audioSource.volume = _audioSource.volume - (Time.deltaTime / TIME_TO_FADE_OUT);
+        }
     }
 }

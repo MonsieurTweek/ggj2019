@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8281843130330189142}
   - component: {fileID: 5333400754799954432}
+  - component: {fileID: 6208334126603565044}
   m_Layer: 0
   m_Name: Interact
-  m_TagString: Untagged
+  m_TagString: Trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,6 +46,23 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6208334126603565044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118664440749230238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06dbe72cef31f65438e2d8d114771e9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targets: []
+  lights: []
+  needAction: 1
+  hideOnTrigger: 1
+  _isActive: 1
 --- !u!1 &7965778631549862046
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,6 +171,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets: []
   lights: []
-  needAction: 1
-  hideOnTrigger: 0
+  needAction: 0
+  hideOnTrigger: 1
   _isActive: 1

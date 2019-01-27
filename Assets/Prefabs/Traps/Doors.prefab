@@ -67,10 +67,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isActive: 1
+  _resetActiveOnInit: 1
   audioSource: {fileID: 5818940835655857851}
-  enableSFX: {fileID: 8300000, guid: 5a93dd6eaab163345b3623b9e8ac8e2e, type: 3}
-  ambianceSFX: {fileID: 0}
-  disableSFX: {fileID: 8300000, guid: e6a09c7f80b712f4ca408b8aa5925689, type: 3}
+  enableSFX: {fileID: 0}
+  ambianceSFX: {fileID: 8300000, guid: 12b67f0d6208be14087f22b77d26a201, type: 3}
+  disableSFX: {fileID: 0}
   deathSFX: {fileID: 8300000, guid: 1743d217459852a41a9b69771060fb14, type: 3}
   animationSpeed: 1
   _isOpen: 1

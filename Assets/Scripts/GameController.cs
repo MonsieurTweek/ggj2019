@@ -15,12 +15,13 @@ public class GameController : MonoBehaviour
     public GameObject spawner;
 
     private static int _deathCounter = 0;
+    private TrapsAndTriggerController trapsAndTriggerController;
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Death counter : " + _deathCounter);
-        
+        trapsAndTriggerController = GetComponent<TrapsAndTriggerController>();
     }
 
     // Update is called once per frame
@@ -34,6 +35,9 @@ public class GameController : MonoBehaviour
         _deathCounter++;
         player.Reset();
         player.transform.position = spawner.transform.position;
+
+        trapsAndTriggerController.EnableAllTraps();
+        trapsAndTriggerController.EnableAllTrigers();
     }
 
     public void EndGame()

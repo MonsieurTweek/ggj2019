@@ -15,6 +15,16 @@ public class Hatch : Trap
         //throw new System.NotImplementedException();
     }
 
+    public override void EnableTrap() {
+        _animator.SetBool("isTriggered", false);
+        base.EnableTrap();
+    }
+
+    public override void DisableTrap() {
+        _animator.SetBool("isTriggered", false);
+        base.DisableTrap();
+    }
+
     // Start is called before the first frame update
     void Start()
     {

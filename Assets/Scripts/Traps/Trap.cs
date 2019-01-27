@@ -26,12 +26,12 @@ abstract public class Trap : MonoBehaviour
 
     public abstract void ActiveTrapFromTrigger();
 
-    public void EnableTrap() {
+    public virtual void EnableTrap() {
         _isActive = true;
         transform.root.gameObject.SetActive(true);
     }
 
-    public void DisableTrap() {
+    public virtual void DisableTrap() {
         _isActive = false;
         transform.root.gameObject.SetActive(false);
     }

@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4998460465525593117}
   - component: {fileID: 6638507893681571005}
+  - component: {fileID: 2667450248917837098}
   m_Layer: 0
   m_Name: Hatch
-  m_TagString: Untagged
+  m_TagString: Threat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,6 +53,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2667450248917837098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3413890051119796641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48d1a1c3c83c754bbe7a5c08add80ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isActive: 1
+  _resetActiveOnInit: 1
+  audioSource: {fileID: 0}
+  enableSFX: {fileID: 0}
+  ambianceSFX: {fileID: 0}
+  disableSFX: {fileID: 0}
+  deathSFX: {fileID: 0}
 --- !u!1 &3972782868195626092
 GameObject:
   m_ObjectHideFlags: 0

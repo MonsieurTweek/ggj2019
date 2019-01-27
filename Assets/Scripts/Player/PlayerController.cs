@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         // Debug
         if(Input.GetButtonDown("Fire3") == true)
         {
-            Kill();
+            //Kill();
         }
         if(Input.GetButtonDown("Fire4") == true)
         {

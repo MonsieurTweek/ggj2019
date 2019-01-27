@@ -13,10 +13,16 @@ public class Trigger : MonoBehaviour
     [SerializeField]
     protected bool _isActive = true;
 
+    public AudioClip disableLaserSFX;
+    public AudioClip enableLightSFX;
+
+    private AudioSource _audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         EnableTrigger();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -54,13 +60,22 @@ public class Trigger : MonoBehaviour
             {
                 target.ActiveTrapFromTrigger();
             }
-         }
+
+            // SFX
+            _audioSource.clip = disableLaserSFX;
+            _audioSource.Play();
+
+        }
         if(lights.Length > 0)
         {
             foreach(Light light in lights)
             {
                 light.enabled = true;
             }
+
+            // SFX
+            _audioSource.clip = enableLightSFX;
+            _audioSource.Play();
         }
 
         if(hideOnTrigger == true)

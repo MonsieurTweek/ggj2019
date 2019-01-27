@@ -4843,6 +4843,11 @@ PrefabInstance:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 859846877}
+    - target: {fileID: 8559004611659328965, guid: 1845a62f7e091ab4985dbe68e9027430,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 859846877}
     - target: {fileID: 8756882575002599160, guid: 1845a62f7e091ab4985dbe68e9027430,
         type: 3}
       propertyPath: m_LocalPosition.y

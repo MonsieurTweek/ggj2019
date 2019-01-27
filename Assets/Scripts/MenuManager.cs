@@ -91,7 +91,7 @@ public class MenuManager : MonoBehaviour
             }
             else
             {
-                deathCounterTextArea.text = "Without any death ?!";
+                deathCounterTextArea.text = "Without dying ! Who are you ?!";
             }
 
             gameController.RestartGame();
@@ -107,13 +107,25 @@ public class MenuManager : MonoBehaviour
             // Need to press A
             if(Input.GetButtonDown("Fire1") == true && _isFadingOut == false)
             {
+                if(textToDisplayWithDelay != null)
+                {
+                    Animator textBlinkAnimator = textToDisplayWithDelay.GetComponent<Animator>();
+                    if (textBlinkAnimator != null)
+                    {
+                        textBlinkAnimator.SetBool("isActive", false);
+                        textToDisplayWithDelay.enabled = false;
+                    }
+                }
                 // If we need a fadeout for the music, we start it
                 if (needFadeOut == true)
                 {
                     _isFadingOut = true;
                 } else
                 {
-                    currentClipTime = _audioSource.time;
+                    if(_nextSceneId == LOADING_SCENE_ID)
+                    {
+                        currentClipTime = _audioSource.time;
+                    }
                     SceneManager.LoadScene(_nextSceneId);
                 }
             }

@@ -4566,6 +4566,11 @@ PrefabInstance:
       propertyPath: lights.Array.data[3]
       value: 
       objectReference: {fileID: 610981550}
+    - target: {fileID: 4076462409121537012, guid: 1845a62f7e091ab4985dbe68e9027430,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 859846877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1845a62f7e091ab4985dbe68e9027430, type: 3}
 --- !u!108 &509731890 stripped

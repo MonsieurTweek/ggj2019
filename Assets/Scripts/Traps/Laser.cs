@@ -22,6 +22,8 @@ public class Laser : Trap
 
     public override void ActiveTrapFromPlayer() {
         //_canBlink = false;
+        audioSource.loop = false;
+        PlaySFX(KeySFX.Death);
     }
 
     // Désactive le laser via un interrupteur

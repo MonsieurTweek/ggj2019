@@ -36,14 +36,11 @@ public class Trigger : MonoBehaviour
             {
                 target.ActiveTrapFromPlayer();
             }
-           
-            if(hideOnTrigger == true)
-            {
-                DisableTrigger();
-            }
-            Debug.Log("TRIGGER PLAYER ACTIVATED !");
         }
-        
+        if(hideOnTrigger == true)
+        {
+            DisableTrigger();
+        }
     }
 
     public virtual void DoActiveTriggerFromAction() {
@@ -74,18 +71,23 @@ public class Trigger : MonoBehaviour
 
     public virtual void EnableTrigger() {
         _isActive = true;
-        transform.gameObject.SetActive(true);
-        if(lights.Length > 0)
-        {
-            foreach(Light light in lights)
-            {
-                light.enabled = false;
-            }
-        }
+
+        GetComponent<Renderer>().enabled = true;
+        //_isActive = true;
+        //transform.gameObject.SetActive(true);
+        //if(lights.Length > 0)
+        //{
+        //    foreach(Light light in lights)
+        //    {
+        //        light.enabled = false;
+        //    }
+        //}
     }
 
     public virtual void DisableTrigger() {
         _isActive = false;
-        transform.gameObject.SetActive(false);
+        GetComponent<Renderer>().enabled = false;
+        //_isActive = false;
+        //transform.gameObject.SetActive(false);
     }
 }

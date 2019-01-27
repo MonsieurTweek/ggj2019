@@ -5,12 +5,21 @@ using UnityEngine;
 public class CableInteraction : Trigger
 {
     public override void EnableTrigger() {
-        transform.parent.gameObject.SetActive(true);
-        base.EnableTrigger();
+        _isActive = true;
+        transform.parent.GetComponent<Trigger>().EnableTrigger();
     }
 
     public override void DisableTrigger() {
-        transform.parent.gameObject.SetActive(false);
-        base.DisableTrigger();
+        _isActive = false;
+        transform.parent.GetComponent<Trigger>().DisableTrigger();
+    }
+
+    // Start is called before the first frame update
+    void Start() {
+    }
+
+    // Update is called once per frame
+    void Update() {
+
     }
 }

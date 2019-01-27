@@ -526,6 +526,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.000001
       objectReference: {fileID: 0}
+    - target: {fileID: 837928346908908423, guid: 87e3285f207ca3740a1bc04c4e4f88dc,
+        type: 3}
+      propertyPath: targets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 837928346908908423, guid: 87e3285f207ca3740a1bc04c4e4f88dc,
+        type: 3}
+      propertyPath: targets.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87e3285f207ca3740a1bc04c4e4f88dc, type: 3}
 --- !u!4 &3703482159664497636 stripped
@@ -4806,11 +4816,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1001835554480075371}
     m_Modifications:
-    - target: {fileID: 5814545634289677451, guid: e9fe54814b4f0ac449fbe9cdf1791963,
-        type: 3}
-      propertyPath: m_Name
-      value: p_baignoire
-      objectReference: {fileID: 0}
     - target: {fileID: 8851809390128154941, guid: e9fe54814b4f0ac449fbe9cdf1791963,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4865,6 +4870,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814545634289677451, guid: e9fe54814b4f0ac449fbe9cdf1791963,
+        type: 3}
+      propertyPath: m_Name
+      value: p_baignoire
       objectReference: {fileID: 0}
     - target: {fileID: 3353173830889768519, guid: e9fe54814b4f0ac449fbe9cdf1791963,
         type: 3}

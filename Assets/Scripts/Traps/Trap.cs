@@ -24,6 +24,10 @@ abstract public class Trap : MonoBehaviour
     public AudioClip disableSFX;
     public AudioClip deathSFX;
 
+    public bool isActive() {
+        return _isActive;
+    }
+
     public abstract void ActiveTrapFromPlayer();
 
     public abstract void ActiveTrapFromTrigger();

@@ -76,6 +76,14 @@ public class Trigger : MonoBehaviour
         _isActive = true;
         transform.root.gameObject.SetActive(true);
 
+        if(lights.Length > 0)
+        {
+            foreach(Light light in lights)
+            {
+                light.enabled = false;
+            }
+        }
+
     }
 
     public void DisableTrigger() {

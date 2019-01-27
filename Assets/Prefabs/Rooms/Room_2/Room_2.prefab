@@ -5505,7 +5505,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 8851809390128154941, guid: e9fe54814b4f0ac449fbe9cdf1791963,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -5520,12 +5519,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.3323808
-=======
     - target: {fileID: 5814545634289677451, guid: e9fe54814b4f0ac449fbe9cdf1791963,
         type: 3}
       propertyPath: m_Name
       value: p_baignoire
->>>>>>> 9bb51d4ca62a0c19f1d0addab1545452e901c42d
       objectReference: {fileID: 0}
     - target: {fileID: 3353173830889768519, guid: e9fe54814b4f0ac449fbe9cdf1791963,
         type: 3}

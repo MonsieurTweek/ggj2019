@@ -38,7 +38,6 @@ public class MenuManager : MonoBehaviour
 
     private const int TIME_TO_FADE_OUT = 2;
     private float _elapsedTime = 0f;
-    private bool _readyToFadeOut = false;
     private bool _isFadingOut = false;
     private int _timerCountDown = TIME_TO_FADE_OUT;
 
@@ -126,7 +125,6 @@ public class MenuManager : MonoBehaviour
                 {
                     _elapsedTime = _elapsedTime % 1f;
                     _timerCountDown--;
-                    Debug.Log(_timerCountDown);
                     if(_timerCountDown < 0)
                     {
                         SceneManager.LoadScene(_nextSceneId);

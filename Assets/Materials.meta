@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: b77ad94f78ead9a4086c03ce95d27fda
+<<<<<<< HEAD:Assets/Materials.meta
+guid: bd50e6c7ce9d92649bc548b2f7ee8c38
+=======
+guid: 70900b6057388a649bc61334ea33e59e
+>>>>>>> 4c6d707df944cd04dcd09ebebe91481465ce3c26:Assets/Texture/MUR_BRICK_ROCK/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

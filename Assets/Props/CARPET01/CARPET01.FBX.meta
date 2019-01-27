@@ -1,21 +1,14 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 793d3e188a26b834cb3cfa81fdbfd205
-=======
-guid: 71395e1805e08f34a84eee0879eace5b
->>>>>>> 9bb51d4ca62a0c19f1d0addab1545452e901c42d
+guid: b88e6880c9fe34a4987f66d04ee3d28c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Pot
-    100002: //RootNode
-    400000: Pot
-    400002: //RootNode
-    2100000: Pot_Tex_1
-    2300000: Pot
-    3300000: Pot
-    4300000: Pot
-    7400000: Take 001
+    100000: //RootNode
+    400000: //RootNode
+    2100000: No Name
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Carpet01
     9500000: //RootNode
   externalObjects: {}
   materials:

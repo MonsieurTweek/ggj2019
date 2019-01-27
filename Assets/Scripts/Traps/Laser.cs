@@ -45,6 +45,24 @@ public class Laser : Trap
         }
     }
 
+    public override void EnableTrap() {
+        _selfCollider.enabled = true;
+        foreach(Renderer laserRenderer in _laserRenderers)
+        {
+            laserRenderer.enabled = true;
+        }
+        base.EnableTrap();
+    }
+
+    public override void DisableTrap() {
+        _selfCollider.enabled = false;
+        foreach(Renderer laserRenderer in _laserRenderers)
+        {
+            laserRenderer.enabled = false;
+        }
+        base.DisableTrap();
+    }
+
     protected void Blink() {
         if(_canBlink == false)
         {

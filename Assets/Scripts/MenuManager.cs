@@ -150,6 +150,11 @@ public class MenuManager : MonoBehaviour
         if(textToDisplayWithDelay != null)
         {
             textToDisplayWithDelay.enabled = true;
+            Animator textBlinkAnimator = textToDisplayWithDelay.GetComponent<Animator>();
+            if(textBlinkAnimator != null)
+            {
+                textBlinkAnimator.SetBool("isActive", true);
+            }
         }
 
     }

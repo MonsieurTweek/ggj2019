@@ -72,10 +72,9 @@ public class Trigger : MonoBehaviour
         }
     }
 
-    public virtual void EnableTrigger() { 
+    public virtual void EnableTrigger() {
         _isActive = true;
         transform.gameObject.SetActive(true);
-
         if(lights.Length > 0)
         {
             foreach(Light light in lights)

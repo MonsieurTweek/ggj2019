@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4998460465525593117}
   - component: {fileID: 6638507893681571005}
   - component: {fileID: 2667450248917837098}
+  - component: {fileID: 8263890917026485303}
   m_Layer: 0
   m_Name: Hatch
   m_TagString: Threat
@@ -72,6 +73,20 @@ MonoBehaviour:
   ambianceSFX: {fileID: 0}
   disableSFX: {fileID: 0}
   deathSFX: {fileID: 0}
+--- !u!136 &8263890917026485303
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3413890051119796641}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.015700277
+  m_Height: 0.1029854
+  m_Direction: 1
+  m_Center: {x: -0.0029701442, y: 0, z: 0.00024751425}
 --- !u!1 &3972782868195626092
 GameObject:
   m_ObjectHideFlags: 0

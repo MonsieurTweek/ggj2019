@@ -15,6 +15,8 @@ abstract public class Trap : MonoBehaviour
 
     [SerializeField]
     protected bool _isActive = true;
+    [SerializeField]
+    protected bool _resetActiveOnInit = true;
 
     public AudioSource audioSource;
     public AudioClip enableSFX;
@@ -27,7 +29,11 @@ abstract public class Trap : MonoBehaviour
     public abstract void ActiveTrapFromTrigger();
 
     public virtual void EnableTrap() {
-        _isActive = true;
+        if(_resetActiveOnInit == true)
+        {
+            _isActive = true;
+        }
+        
         transform.root.gameObject.SetActive(true);
     }
 
